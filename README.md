@@ -1,6 +1,8 @@
 # Gridbricks | UK Wind Forecast & Wholesale Day-Ahead Procurement Portal
 
-An institutional-grade decision support platform built for UK electricity utility trading desks. The portal enables power procurement teams to resolve the latest wind generation forecasts available prior to wholesale day-ahead auction gate closure, quantitatively evaluate forecast error accuracy across January 2026, and optimize net thermal procurement orders to hedge Balancing Mechanism cashout exposure.
+Live demo: https://gb-wind-kjhwr.vercel.app/
+
+An institutional-grade decision support platform built for UK electricity utility trading desks. The portal enables power procurement teams to resolve the latest wind generation forecasts available pr[...] 
 
 ---
 
@@ -9,17 +11,17 @@ An institutional-grade decision support platform built for UK electricity utilit
 ### 1.1 The UK Day-Ahead Electricity Market Context
 In Great Britain (GB), electricity cannot be stored at scale and must be balanced continuously in 30-minute settlement periods (48 periods per calendar day). 
 
-Utility companies supply retail consumers whose demand fluctuates throughout the day. To satisfy this demand, procurement teams trade power in the **Day-Ahead Wholesale Market** (operated via power exchanges such as EPEX SPOT GB and Nord Pool N2EX).
+Utility companies supply retail consumers whose demand fluctuates throughout the day. To satisfy this demand, procurement teams trade power in the **Day-Ahead Wholesale Market** (operated via power ex[...]
 
 - **Delivery Day (D):** The calendar day when physical electricity flows across the GB transmission network (Periods 1 to 48, 00:00 to 23:30 UTC).
 - **Day-Ahead Gate Closure (D-1):** Power purchase orders must be finalized and submitted on day $D-1$ before auction gate closure (typically between 09:20 and 11:00 UTC).
-- **The Decision Challenge:** Renewable wind generation is weather-dependent and volatile. To determine how much conventional thermal generation (e.g. Combined Cycle Gas Turbines - CCGT) must be purchased on the day-ahead auction, traders must subtract forecasted wind generation from consumer demand:
+- **The Decision Challenge:** Renewable wind generation is weather-dependent and volatile. To determine how much conventional thermal generation (e.g. Combined Cycle Gas Turbines - CCGT) must be purch[...]
   $$\text{Net Thermal Procurement Required (MW)} = \max(0, \text{Consumer Demand} - \text{Latest Available Wind Forecast})$$
-- **Balancing Risk & Cashout Penalties:** If wind generation outturns lower than forecast (actual < forecast), the utility is caught short in the Balancing Mechanism and penalized at the volatile **System Buy Price (SBP)**. Conversely, over-forecasting leaves surplus power sold at depressed **System Sell Prices (SSP)**.
+- **Balancing Risk & Cashout Penalties:** If wind generation outturns lower than forecast (actual < forecast), the utility is caught short in the Balancing Mechanism and penalized at the volatile **Sy[...]
 
 ### 1.2 The Two Primary Requirements
 1. **Latest Forecast Resolution:** Identify and visualize the exact latest wind generation forecast published prior to the trader's day-ahead decision cutoff ($T_{\text{gate}}$ on D-1).
-2. **Quantitative Accuracy Evaluation:** Quantify forecast errors across January 2026 using industry-standard statistical metrics (MAE, RMSE, MAPE, Bias, and P90 risk margins) to size operational reserve buffers.
+2. **Quantitative Accuracy Evaluation:** Quantify forecast errors across January 2026 using industry-standard statistical metrics (MAE, RMSE, MAPE, Bias, and P90 risk margins) to size operational rese[...]
 
 ### 1.3 Data Provenance (Elexon BMRS)
 All data conforms strictly to Elexon BMRS (Balancing Mechanism Reporting Service) datasets:
@@ -185,4 +187,4 @@ As permitted by the challenge specification, AI engineering tools (Anthropic Cla
 2. Reviewing UK Elexon BMRS API parameter syntax and documentation specifications.
 3. Accelerating the synthesis of the 10-minute presentation guide and video walkthrough script.
 
-All trading logic, gate-closure selection algorithms, statistical metrics equations, and energy domain reconciliation implementations were designed, verified, and tested specifically for this challenge.
+All trading logic, gate-closure selection algorithms, statistical metrics equations, and energy domain reconciliation implementations were designed, verified, and tested specifically for this challeng[...]
